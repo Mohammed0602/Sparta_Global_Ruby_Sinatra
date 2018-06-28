@@ -1,4 +1,4 @@
-class PhotosController < Sinatra::Base
+class CarsController < Sinatra::Base
   set :root, File.join(File.dirname(__FILE__), '..')
   set :views, Proc.new { File.join(root, "views")}
 
@@ -36,14 +36,15 @@ cars = [
 
 
 get '/' do
-erb :'./photos/index'
+  @cars = cars
+erb :'/cars/index'
 end
 
-get '/:id' do
+get '/cars/:id' do
   id = params[:id].to_i
   @car = cars[id]
-  # "This is a #{@make[:make]}, model is #{@make[:model}. The colour is #{@make[:colour]} "
-  erb :'./photos/car'
+  # "This is a #{@car[:make]}, model is #{@car[:model}. The colour is #{@car[:colour]} "
+  erb :'/cars/show'
 end
 
 end
