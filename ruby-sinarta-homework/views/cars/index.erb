@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>cars</title>
+  </head>
+  <body>
+    <h1>welcome to my cars </h1>
+
+    <%@cars.each do |car|%>
+    <h2>Click Here
+     <a href="cars/<%=car[:id]%>">
+      <%=car[:id]%></a></h2>
+      <%end%>
+
+  </body>
+</html>
